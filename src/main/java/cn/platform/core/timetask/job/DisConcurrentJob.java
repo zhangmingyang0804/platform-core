@@ -4,6 +4,8 @@ import cn.platform.core.timetask.JobConfig;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
 
+import java.util.HashMap;
+
 /**
  * @Description: 无状态任务, 终止正在执行的任务
  * @Package: cn.platform.core.timetask.job
@@ -16,7 +18,6 @@ import org.quartz.JobExecutionContext;
 public class DisConcurrentJob extends AbstractJob {
     @Override
     public void execute(JobExecutionContext context) {
-        JobConfig config = (JobConfig) context.getMergedJobDataMap().get(JobConfig.SCHEDULEJOB_KEY);
-        executeJob(config);
+        executeJob(context);
     }
 }

@@ -1,7 +1,6 @@
 package cn.platform.core.timetask;
 
 import com.alibaba.fastjson.JSON;
-import org.springframework.context.ApplicationContext;
 
 import java.io.Serializable;
 import java.util.List;
@@ -28,16 +27,6 @@ public class JobConfig implements Serializable {
     private String springId;//spring bean
     private String recordingBeanId;//记录任务执行状态bean
     private List<String> executeNodes;//允许执行节点
-
-    private ApplicationContext applicationContext;
-
-    public ApplicationContext getApplicationContext() {
-        return applicationContext;
-    }
-
-    public void setApplicationContext(ApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
-    }
 
     public List<String> getExecuteNodes() {
         return executeNodes;
@@ -140,7 +129,6 @@ public class JobConfig implements Serializable {
                 .append(this.getJobName());
         return stringBuilder.toString();
     }
-
 
     @Override
     public String toString() {

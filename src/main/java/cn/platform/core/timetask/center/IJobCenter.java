@@ -3,7 +3,7 @@ package cn.platform.core.timetask.center;
 import cn.platform.core.timetask.JobConfig;
 
 /**
- * @Description:
+ * @Description: 定时任务管理中心
  * @Package: cn.platform.core.timetask
  * @ClassName: IJobCenter
  * @Author: zhangmingyang

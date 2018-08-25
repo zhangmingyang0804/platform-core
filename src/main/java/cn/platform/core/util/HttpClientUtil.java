@@ -18,6 +18,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -154,5 +156,22 @@ public class HttpClientUtil {
                 }
             }
         }
+    }
+
+    /**
+     * 获取当前机器IP
+     *
+     * @return
+     */
+    public static String getSystemLocalAddress() {
+        String hostAddress = null;
+        try {
+            hostAddress = InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            if (logger.isErrorEnabled()) {
+                logger.error("Get localHost address faied , cuase by ;", e);
+            }
+        }
+        return hostAddress;
     }
 }

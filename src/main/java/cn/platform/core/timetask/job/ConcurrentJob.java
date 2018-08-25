@@ -1,6 +1,5 @@
 package cn.platform.core.timetask.job;
 
-import cn.platform.core.timetask.JobConfig;
 import org.quartz.JobExecutionContext;
 
 /**
@@ -14,7 +13,6 @@ import org.quartz.JobExecutionContext;
 public class ConcurrentJob extends AbstractJob {
     @Override
     public void execute(JobExecutionContext context) {
-        JobConfig config = (JobConfig) context.getMergedJobDataMap().get(JobConfig.SCHEDULEJOB_KEY);
-        executeJob(config);
+            executeJob(context);
     }
 }
