@@ -1,5 +1,6 @@
 package cn.platform.core.property;
 
+import cn.platform.core.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -79,6 +80,11 @@ public class PropertyLoader {
      */
     public static String getConfigValue(String configKey, String defaultValue) {
         getInstance().loadProperty();
-        return properties.getProperty(configKey, defaultValue).trim();
+        String val = properties.getProperty(configKey, defaultValue);
+        if (StringUtils.isNotEmpty(val)) {
+            return val.trim();
+        } else {
+            throw new NullPointerException();
+        }
     }
 }
