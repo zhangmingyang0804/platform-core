@@ -30,7 +30,7 @@ import java.util.List;
  * @Version: 1.0
  */
 public class JobCenter implements IJobCenter, ApplicationContextAware {
-    private static Logger logger = LoggerFactory.getLogger(JobCenter.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JobCenter.class);
 
     public static final String CONTEXT_JOBCONFIG = "context_jobConfig";
     public static final String CONTEXT_APPLICATIONCONTEXT = "context_applicationContext";
@@ -90,8 +90,8 @@ public class JobCenter implements IJobCenter, ApplicationContextAware {
         //启动定时任务
         getScheduler().scheduleJob(jobDetail, cronTrigger);
 
-        if (logger.isInfoEnabled()) {
-            logger.info("Started job : [{}] successed", config.getName());
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Started job : [{}] successed", config.getName());
         }
     }
 
@@ -108,8 +108,8 @@ public class JobCenter implements IJobCenter, ApplicationContextAware {
         //从任务工厂删除该定时任务
         scheduler.deleteJob(jobKey);
 
-        if (logger.isInfoEnabled()) {
-            logger.info("stop and delete job:[{}] in factory successed . ", config.getName());
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("stop and delete job:[{}] in factory successed . ", config.getName());
         }
     }
 
@@ -129,8 +129,8 @@ public class JobCenter implements IJobCenter, ApplicationContextAware {
             CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(config.getCronExpression());
             cronTrigger = cronTrigger.getTriggerBuilder().withIdentity(triggerKey).withSchedule(scheduleBuilder).build();
             scheduler.rescheduleJob(triggerKey, cronTrigger);
-            if (logger.isInfoEnabled()) {
-                logger.info("refresh job trigger cron:[{}] successed", config.getName());
+            if (LOGGER.isInfoEnabled()) {
+                LOGGER.info("refresh job trigger cron:[{}] successed", config.getName());
             }
         }
     }
