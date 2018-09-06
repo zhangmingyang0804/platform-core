@@ -77,6 +77,20 @@
         </dependency>
         <!-- ====================spring end -->
         <!--**********************************************************************************************-->
+        <!-- ====================mybatis start -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- ====================mybatis end -->
+        <!--**********************************************************************************************-->
         <!-- ====================aspectj start -->
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -156,6 +170,66 @@
             <version>2.4.2</version>
         </dependency>
         <!-- ====================redis end -->
+        <!--**********************************************************************************************-->
+        <!-- ====================druid start -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.18</version>
+        </dependency>
+        <!-- ====================druid end -->
+        <!--**********************************************************************************************-->
+        <!-- ====================mysql connector start -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.21</version>
+        </dependency>
+        <!-- ====================mysql connector end -->
+        <!--**********************************************************************************************-->
+        <!-- ====================shiro start -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.20</version>
+        </dependency>
+        <dependency>
+            <groupId>net.mingsoft</groupId>
+            <artifactId>shiro-freemarker-tags</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <artifactId>quartz</artifactId>
+            <groupId>org.opensymphony.quartz</groupId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-quartz</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <!-- ====================shiro end -->
     </dependencies>
 
 
